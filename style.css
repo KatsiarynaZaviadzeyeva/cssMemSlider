@@ -3,15 +3,14 @@
     width: 80%;
     box-shadow: 0rem 0.25rem 0.5rem 0rem rgba(0, 0, 0, 0.2), 0rem 0.375rem 1.25rem 0rem rgba(0, 0, 0, 0.19);
     margin-bottom: 1.5rem;
-    height: 37.5rem;
+    height: 40rem;
     margin: 5rem auto 0rem;
-    width: 43.75rem;
+    width: 45rem;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
-    text-align: left;
     padding: 0.6rem;
 }
 
@@ -95,4 +94,13 @@ p {
 #slide3:checked~.contr label:nth-of-type(3),
 #slide4:checked~.contr label:nth-of-type(4) {
     background: #ddd;
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper .container {
+        flex-direction: column-reverse;
+    }
+    .contr {
+        justify-content: center;
+    }
 }
