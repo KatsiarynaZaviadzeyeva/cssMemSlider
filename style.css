@@ -80,6 +80,11 @@ p {
 
 .contr label {
     cursor: pointer;
+}
+
+.contr-area {
+    display: flex;
+    box-sizing: border-box;
     width: 1rem;
     height: 1rem;
     margin: 0.5rem 0rem 0rem 0.7rem;
@@ -88,12 +93,16 @@ p {
     transition: background ease-in-out .5s;
 }
 
-.wrapper label:hover,
-#slide1:checked~.contr label:nth-of-type(1),
-#slide2:checked~.contr label:nth-of-type(2),
-#slide3:checked~.contr label:nth-of-type(3),
-#slide4:checked~.contr label:nth-of-type(4) {
+.wrapper .contr-area:hover,
+#slide1:checked~.contr label:nth-of-type(1) .contr-area,
+#slide2:checked~.contr label:nth-of-type(2) .contr-area,
+#slide3:checked~.contr label:nth-of-type(3) .contr-area,
+#slide4:checked~.contr label:nth-of-type(4) .contr-area {
     background: #ddd;
+}
+
+.contr label:active .contr-area {
+    border: 0.3rem solid rgb(20, 53, 110);
 }
 
 @media only screen and (max-width: 600px) {
