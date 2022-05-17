@@ -1,0 +1,115 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,200&family=Exo:wght@300&family=Roboto+Slab:wght@300;400&display=swap');
+.wrapper {
+    width: 80%;
+    box-shadow: 0rem 0.25rem 0.5rem 0rem rgba(0, 0, 0, 0.2), 0rem 0.375rem 1.25rem 0rem rgba(0, 0, 0, 0.19);
+    margin-bottom: 1.5rem;
+    height: 30rem;
+    margin: 5rem auto 0rem;
+    width: 45rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem;
+}
+
+.slider {
+    overflow: hidden;
+    margin: 0.6rem;
+    padding-top: 0.6rem;
+}
+
+.wrapper>input {
+    display: none;
+}
+
+.image {
+    display: flex;
+    flex-direction: row;
+    transition: ease-in 1s;
+}
+
+#slide1:checked~.slider .image {
+    transform: translateX(0%);
+}
+
+#slide2:checked~.slider .image {
+    transform: translateX(-100%);
+}
+
+#slide3:checked~.slider .image {
+    transform: translateX(-200%);
+}
+
+#slide4:checked~.slider .image {
+    transform: translateX(-300%);
+}
+
+#slide1:checked~.container .text p {
+    transform: translateX(0%);
+}
+
+#slide2:checked~.container .text p {
+    transform: translateX(-100%);
+}
+
+#slide3:checked~.container .text p {
+    transform: translateX(-200%);
+}
+
+#slide4:checked~.container .text p {
+    transform: translateX(-300%);
+}
+
+.wrapper .contr {
+    display: flex;
+    flex-direction: row;
+}
+
+.text {
+    overflow: hidden;
+    display: flex;
+    flex-grow: 100%;
+    font-family: 'Bitter', serif;
+}
+
+p {
+    min-width: 100%;
+}
+
+.contr label {
+    cursor: pointer;
+}
+
+.contr-area {
+    display: flex;
+    box-sizing: border-box;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem 0rem 0rem 0.7rem;
+    border: 0.1rem solid #ddd;
+    border-radius: 50%;
+    transition: background ease-in-out .5s;
+}
+
+.wrapper .contr-area:hover,
+#slide1:checked~.contr label:nth-of-type(1) .contr-area,
+#slide2:checked~.contr label:nth-of-type(2) .contr-area,
+#slide3:checked~.contr label:nth-of-type(3) .contr-area,
+#slide4:checked~.contr label:nth-of-type(4) .contr-area {
+    background: #ddd;
+}
+
+.contr label:active .contr-area {
+    border: 0.3rem solid rgb(20, 53, 110);
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper .container {
+        flex-direction: column-reverse;
+    }
+    .contr {
+        justify-content: center;
+    }
+}
